@@ -1,0 +1,61 @@
+\chapter{Evaluation}
+\label{chapter: Evaluation}
+
+This chapter contains a discussion that aims to evaluate the contributions of this report and provide a critical appraisal of the experiments and techniques used.
+
+\vspace{\baselineskip}
+\noindent
+This dissertation is a continuation of the Red October project which refers to the partnership of the Royal Mail Data Science Group with Imperial's Computational Optimisation Group. The project as the title suggest mostly deals with data analysis processes and concludes with an examination of uncertainty. The original direction of the project focused more on the study of uncertainty. However, after a meeting with our Industrial Liaison at the start of the year both parties realised that a thorough examination of the dataset was going to be a substantially bigger task than originally through. That is because this body of work is the first attempt at analysing the dataset described in Chapter \ref{chapter: Problem Definition}. This project's purpose was hence slightly amended, and its new objective became to serve as a stepping stone for future methodological explanations based on the findings of our analysis of the dataset. The high-level objectives of the project resembled part of those of a previous PhD thesis \cite{natashapage}, which also included the first exploration of a different dataset provided by Royal Mail.
+
+\vspace{\baselineskip}
+\noindent
+Those high-level objectives of extracting the maximum amount of insights possible from this dataset were explored in Chapters \ref{chapter: Problem Definition},\ref{chapter: 2-Evaluating Royal Mail Historical Data}. We evaluated the schedules that are currently run by Royal Mail and used them as the basis to develop more efficient schedules. The thought process behind this task was to generate a finding for our industrial liaison that illustrates the room for optimisation that exists. Although our findings are not concrete proof that our schedules would work for Royal Mail since they are based on theoretical assumptions they provide an insight into what is possible in regards to efficiency. Having obtained a lower bound that shows what schedules we are capable of developing, we can then use this insight to gradually create evermore practically realisable schedules by shifting our assumptions towards more life-resembling postulates. 
+
+\vspace{\baselineskip}
+\noindent
+The uncertainty portion of the dissertation attempts to cover new ground with respect to findings that compare the performance of various methodologies. More specifically in Chapter \ref{chapter:Benchmark Instances} we compare a total of three methodologies with respect to the efficiency and robustness to uncertainty of the schedules they generate. Those are the non-pre-emptive Makespan Scheduling formulation of Section \ref{section:Makespan Scheduling-content} as well as schedules from the Lexicographic Optimisation methodology and the Squared Completion time method.  
+
+\vspace{\baselineskip}
+\noindent
+The uncertainty components are based on \textit{box} uncertainty sets of various sizes. Our initial goal was to also explore the effects of the ellipsoidal uncertainty sets\footnote{Mentioned in Section \ref{section:background uncertainty} of Chapter \ref{chapter: Background}} however, the study of uncertainty was added as an additional topic towards the end of the project timeline. As a result, although an initial attempt to incorporate ellipsoidal uncertainty sets was made we decided to abandon further pursuing it and instead propose it as one of the future direction that we deemed worthwhile investigating in Chapter \ref{chapter: Future Directions}. However, when providing an appraisal of Chapter \ref{chapter:Benchmark Instances} we are obliged to mention that this results in a potentially non-complete study of the disturbance effects. It is critical for the uncertainty study to provide meaningful insights to also explore the effects that the ellipsoidal uncertainty sets will have on our schedules, since they could be use approximate the effects of more complex uncertainty sets as discussed in \cite{vertsimas}.
+
+\subsection*{Classification of Redundant Activities}
+As mentioned in Section \ref{section: Redefined Dataset} of Chapter \ref{chapter: Problem Definition} we created a series of additional instances that we labelled \textbf{Redefined Historical Schedules}. The generation of those instances was performed by deleting a series of redundant activities from the dataset. More specifically, we classified a collection of duties as \textit{non-useful} and proceeded to erase them from within their blocks. The classification of the activities as \textit{useful} or not was not performed in consultation with our Industrial Liaison. Instead we used as a criterion the frequency of occurrence of each activity to determine its level of importance. Using our self-determined classification we conducted the experiments involving the Redefined instances and presented them to our industrial partners in an interim presentation. 
+
+\vspace{\baselineskip}
+\noindent
+During the preparation of the presentation, it was noticed that the classification of the activities might be ill-advised. This observation stems from Table \ref{table: Useful vs Non-Useful Activities} in Section \ref{section: Redefined Dataset}. As we can see we mistakenly classified the activities \texttt{Park Vehicle}, \texttt{Check}, \texttt{Clean} as \textit{non-useful}. However, we later determined that all three of those activities require the presence and control of the HGV driver. As a result, they cannot be characterised as \textit{non-useful}. It is only the \texttt{Distribution/Processing} activity that can be regarded as \textit{non-useful}.
+
+\vspace{\baselineskip}
+\noindent
+Although this observation was uncovered in too late a stage, further research showed that the effect on our results is minimal. 
+
+\subsection*{Impracticable Pre-emptive Schedules}
+In Section \ref{section: Pre-emptive} of Chapter \ref{chapter: 2-Evaluating Royal Mail Historical Data} we transform our previously utilised formulation of Makespan Scheduling into an equivalent pre-emptive formulation. The purpose of this transformation of our model is to use the transformed model to obtain a an approximation of the \textbf{theoretical optimal schedule}. 
+
+\vspace{\baselineskip}
+\noindent
+We were indeed able to reduce the optimality gap to the theoretical limit by applying this pre-emptive formulation. As mentioned in Chapter Chapter \ref{chapter: 2-Evaluating Royal Mail Historical Data} however, this formulation violated one of the assumptions outline in Section \ref{section: 4.1}. The practical implications of generating a schedule that violates this postulate are quite significant. The structure of such a schedule render it impossible to implement from the perspective of Royal Mail. A pre-emptive schedule is not realistic in terms of its implementation because it would require the HGV drivers to carry out activities in a chaotic sequence. 
+
+\vspace{\baselineskip}
+\noindent
+More specifically, the blocks of an instance that we schedule with each formulation have certain semantics attached to them. As outlined in Section \ref{section: 4.1} we can afford to neglect them as long as the non-pre-emptive nature of our final schedule is preserved. In more detail, the blocks contain certain activities within the spectrum of a round-trip. Within a block those activities are ordered according to a logical sequence. For instance, as we had discussed in Section \ref{section: Data Exploration} of Chapter \ref{chapter: Problem Definition}, we expect an \texttt{unload} activity to occur in direct succession to a \texttt{travel} activity. By maintaining a non-preemptive formulation and through obeying assumption (1) of Section \ref{section: 4.1} that logical sequence is preserved. As a result, the practical utility of such a schedule is also preserved. Such a schedule has true value for Royal Mail since it can be implemented on the floor of a MC with little effort, as it is fundamentally based on a re-arrangement of the Historical schedule.
+
+\vspace{\baselineskip}
+\noindent
+In contrast, the schedules generated from a pre-emptive formulation that consequently violate assumption (1), although more efficient with respect to the objective, have no practical utility for Royal Mail. That observation is based on two pitfalls of the pre-emptive schedule.
+
+\vspace{\baselineskip}
+\noindent
+Firstly, it would take a tremendous effort of a re-definition of Royal Mail's company policies for such schedules to be allowed. That is because implementing those schedules in practice would require a fundamental re-organisation of the routes followed by drivers. That is since the pre-emptive schedules pay no regard to the reasoning behind the crafting of routes but are only concerned with most efficiently fitting activities into duties. Moreover, since we neglect information regarding distance between the various external locations\footnote{As mentioned in Section \ref{section: Data Cleaning} of Chapter \ref{chapter: Problem Definition}} we could have successive travel legs schedule that are at the complete opposite ends of the area for which the MC is responsible for.
+
+\vspace{\baselineskip}
+\noindent
+Secondly, the pre-emptive schedules could never be realised in their true form because they tend to schedule futile sequences of activities. More specifically since we allow the pre-emptive schedules to breakdown the pre-defined structure of blocks when observing the sequence of activities schedule by the solver we notice the occurrence of sequence of activities that are impossible. For instance, we observed the successive scheduling of \texttt{unload} activities one after the other. As one can easily determine that sequence of activities is completely futile as the second \texttt{unload} activity will be scheduled completely in vain. Once again, this phenomenon is observed because we allow our formulation to disobey assumption (1) and hence the semantics associated with each block.
+
+\vspace{\baselineskip}
+\noindent
+All in all, the approximation for the theoretical limit for the makespan that we obtained from the pre-emptive formulation can only be characterised as a practically obtainable lower bound. It can only be characterised as practical because it can actually be obtained from the output end of a solver but not because it can be practically implemented by our Industrial Liaison. 
+
+
+

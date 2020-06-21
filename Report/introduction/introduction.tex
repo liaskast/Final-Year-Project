@@ -1,0 +1,63 @@
+\chapter{Introduction}
+
+\vspace{\baselineskip}
+Royal Mail the national mail provider of the UK runs a hierarchically structured organisation. On any given day, the Royal Mail postal service workforce belonging to one of Royal Mail’s 1,250 Delivery Offices (DO) collects mail from customers and aggregates it at their respective DO. The mail is then collected by a fleet of \textit{Heavy Goods Vehicles} (HGV) (7,000 in total) belonging to one of 50 regional centralised Mail Centres where mail is gathered for sorting, ready for its redistribution the following day. After the sorting process, the aggregated mail at each mail centre is sent down either of two paths. It is either sent onwards to a region covered by a different mail centre or it is sent back to one of the DOs covered by the MC where it was sorted. This project focuses on the latter rather than the former path, attempting to establish a method for scheduling the routes from the regional MCs to the local DOs and back. The objective is to generate schedules that \textbf{optimise the use of Royal Mail’s HGV drivers’ time}.
+
+\vspace{\baselineskip}
+\noindent
+This problem might appear to belong in the class of \textit{Vehicle Routing }problems given that the majority of \textit{delivery system} problems tend to focus on the optimisation of the routing. However, due to the repetitiveness of the daily routes to-and-from each mail centre, the project leverages the HGV drivers’ prior familiarity with the routes to make efficiency gains.
+
+\vspace{\baselineskip}
+
+\noindent
+The employees responsible for the scheduling of Royal Mail’s operations are currently generating the daily schedules heuristically without any algorithm-based procedures associated with the process they employ. In essence, they are attempting to perform a \textbf{complete search} among the spectrum of feasible timetables for each day. Due to the complexity of such a task, they often compromise for a non-optimal arrangement that satisfies the legal requirements, with little to no regard as to whether it is optimal. As a result, the HGV drivers’ time is not utilised as efficiently as it could be hence, resulting in additional costs for Royal Mail, and drivers’ shifts often ending very late in the day. Given that there is currently no efficient method guaranteeing the provision of optimal schedules, even a marginal improvement in minimising the time drivers spend off the road could yield substantial cost savings to Royal Mail’s budget as well as a more uniform timetabling of shifts.
+
+\vspace{\baselineskip}
+\paragraph{Contributions}
+The project’s challenge is to construct an efficient method that will provide scheduling strategies by formulating and solving a \textit{discrete optimisation problem}. In order to achieve this, we first need to understand whether true optimal solutions to the problem do exist. By formulating a mixed-integer linear program and analysing it over a dataset of real scheduling data, provided by Royal Mail, we will evaluate whether optimal exact solutions can be obtained. Moreover, we will generate exact solutions that are optimal with respect to a series of different objectives that have different qualitative effects when implemented. Following that, we must explore whether it is possible to incorporate aspects of Royal Mail’s company policy to the problem in order to provide more realistic solutions. By analysing the drivers’ workflow at a more detailed level we aim to determine whether, the removal of pre-existing tactics regarding the sequence with which drivers perform their assigned tasks can further minimise the time they spend performing non-critical activities. 
+
+\vspace{\baselineskip}
+\noindent
+The final contribution is arguably one of the most critical points in the study of the development of an efficient schedule for Royal Mail since it involves the incorporation of a taste of reality in our timetabling efforts. The schedules developed in previous sections operated in a deterministic \textit{offline scheduling} environment. Namely, as the scheduler we are aware of every level detail with respect to the components that need scheduling, prior to attempting to create the schedule. However, for our final contribution we choose to go beyond such restrictions and allow various components to be perturbed up to a certain degree such that we can simulate the effects of various uncertainty components that are bound to occur in a real-life Mail Transportation environment such as that of Royal Mail. Consequently, we proceed to compare and contrast two different scheduling methodologies to determine which one can remain undeterred by the addition of the uncertain environment while still preserving a fairly optimal and efficient schedule.
+
+\vspace{\baselineskip}
+\noindent
+A summary of the contributions of the project is found below:
+
+
+\vspace{\baselineskip}
+\begin{itemize}
+
+	\item \textbf{Formulate Exact Models:} We formulate deterministic parallel machine models that accurately represent the context of the Royal Mail problem. Each model examines the problem through a different prism and attempts to optimise it under the affiliated objective.  \par
+
+	\item \textbf{Attainment of Exact Solutions:} Utilising the formulated models we obtain optimal solutions for each instance of the problem that highlight the opportunities for optimisation that exist within the domain of this problem.   \par
+	
+	\item \textbf{Comparison of solutions to Historical Schedules of Royal Mail: }We compare the heuristically obtained schedule currently operated by Royal Mail to our optimised schedules for each objective. We evaluate the degree to which our solutions are out-performing the historical schedule for each objective. \par
+
+	\item \textbf{Study of Uncertainty:} We conduct experiments that determine the effects of the application of uncertainty components that resemble real-life perturbations have on our schedules.
+	
+	\item \textbf{Robust Optimisation:} Having established the consequences of the disturbances on our schedules, we study two methodologies, Lexicographic Optimisation and Polynomial Objective Makespan Scheduling, from the field of Robust Optimisation to obtain efficient schedules that are also robust to uncertainty..
+\end{itemize}\par
+\vspace{\baselineskip}
+\paragraph{Organisation}
+
+
+\vspace{\baselineskip}
+\begin{itemize}
+	\item Chapter \ref{chapter: Background}: outlines the background concepts that the reader needs to understand, in order to be capable of following the principles explored throughout this dissertation.\par
+
+	\item Chapter \ref{chapter: Problem Definition}: describes the problem of interest and presents the reader with an overview of the data provided by Royal Mail. \par
+
+	\item Chapter \ref{chapter: 2-Evaluating Royal Mail Historical Data}: evaluates the current practices ran by Royal Mail, by performing simple Mixed-Integer Optimisation, and obtains optimal solutions through computer-based procedures for deriving solutions. It then compares the optimised solutions to the problem from the model, and subsequently validates and refines the model where needed.\par
+
+    \item Chapter \ref{chapter:Benchmark Instances}: introduces the study of uncertainty conducted in this dissertation. It evaluates the robustness of one of the optimal solutions obtained in Chapter \ref{chapter: 2-Evaluating Royal Mail Historical Data} concerning uncertainty. It then studies robustness enhancing methodologies that aid in the development of more uncertainty robust schedules.   \par
+
+	\item Chapter \ref{chapter: Evaluation}: evaluates the body of work discussed in this dissertation\par
+
+	\item Chapter \ref{chapter: Future Directions}: concludes with a synopsis of the key achievements of this dissertation and a series of ideas for future exploration, and improvements to the modelling that would extend the aspects of the problem captured.
+\end{itemize}\par
+
+
+
+
+

@@ -1,0 +1,83 @@
+\chapter{Project Plan}
+
+
+\section{Milestone $\#$ 1 – Formulation of model and Solving it}
+\vspace{\baselineskip}
+\subsubsection*{Goal}
+\addcontentsline{toc}{subsubsection}{Goal}
+
+Formulate and implement a \textit{mixed-integer linear programming} model with the aim of computing exact solutions for the dataset supplied by Royal Mail. For this milestone, the schedules generated  have complete freedom to schedule the meal-relief breaks anywhere within the atomic time blocks (representing the HGV's routes). At the same time, legality needs to be maintained by respecting the EU rules for the Driving and Working time directives. 
+
+
+
+\vspace{\baselineskip}
+\subsubsection*{Progress}
+\addcontentsline{toc}{subsubsection}{Progress}
+
+Initial model formulations have been made and currently working towards testing with synthetic data. Testing of the current model formulation with inputs from the real dataset with the goal of discovering proposed improvements to the model, is the immediate next step. This will  determine whether an exact solution is possible.
+
+
+
+\vspace{\baselineskip}
+\subsubsection*{Fallback position}
+\addcontentsline{toc}{subsubsection}{Fallback position}
+
+Given that this milestone will in principle comprise the bulk of the project a fallback position, in the event that an exact solution is not possible, is to explore the use of approximation algorithms such as the \textit{randomised rounding }approach to reach approximate solutions for the problem.
+
+
+
+\vspace{\baselineskip}
+\subsubsection*{Timetable }
+\addcontentsline{toc}{subsubsection}{Timetable }
+
+Conducting critical analyses of the improvements to the model that arise from testing is to be undertaken until mid-February with the goal of determining by then whether an exact solution is possible. Depending on that outcome, by the end of February the focus will shift either to getting an approximate solution through approximation algorithm techniques or focusing on pursuing Milestones $\#$ 2, $\#$ 3.
+
+
+
+\vspace{\baselineskip}
+\section{Milestone $\#$ 2 – Incorporate Company Policy Requirements}
+\vspace{\baselineskip}
+\subsubsection*{Goal}
+\addcontentsline{toc}{subsubsection}{Goal}
+
+Incorporate in the model the Royal Mail company policy that breaks should occur only after a certain subset of activities out of the set of possible activities undertaken by the drivers. This is to be modelled with \textit{precedence constraints}. Given the complexity that this task would introduce, approximation algorithms will almost certainly need to be explored.
+
+
+
+\vspace{\baselineskip}
+\subsubsection*{Timetable}
+\addcontentsline{toc}{subsubsection}{Timetable}
+
+Provided that Milestone $\#$ 1 has been achieved by the end of February, the period throughout March – April will be spent on this second milestone. If Milestone $\#$ 1 has not been achieved and implementation of the fallback position is necessary, an extra month will approximately need to be spent on Milestone $\#$ 1.
+
+
+
+\vspace{\baselineskip}
+\section{Milestone $\#$ 3 – Additional Constraints}
+\vspace{\baselineskip}
+\subsubsection*{Goal}
+\addcontentsline{toc}{subsubsection}{Goal}
+
+Incorporate jobs that have a time-window limitation assigned to them, modelled by fixed atomic blocks.
+
+
+
+\vspace{\baselineskip}
+\subsubsection*{Timetable}
+\addcontentsline{toc}{subsubsection}{Timetable}
+
+Whether or not this milestone can be pursued will depend on the other two milestones.
+
+
+
+\vspace{\baselineskip}
+\subsection*{Final Report Preparation}
+
+\subsubsection*{Timetable}
+\addcontentsline{toc}{subsubsection}{Timetable}
+
+Expected to commence after the $``$Project health check-up$"$  meeting during the week 11/05 - 15/05 and is expected to last for one-month, hence from the 17/05 until \textbf{17/06} which is the \textbf{report submission deadline}.
+
+
+
+

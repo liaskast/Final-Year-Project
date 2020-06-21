@@ -1,0 +1,93 @@
+%Two images in one, illustrating atomic block
+\begin{figure}%
+    \centering
+    \subfloat[An example of a typical duty consisting of two round-trips, both starting and concluding at the MC.]{
+\begin{tikzpicture}[node distance=1.6cm,>=stealth',bend angle=45,auto]%picture #1
+
+  \tikzstyle{place}=[circle,thick,draw=black!75,fill=white!20,minimum size=6mm]
+  \tikzstyle{red place}=[place,draw=red!75,fill=red!20]
+  \tikzstyle{transition}=[rectangle,thick,draw=black!75,
+  			  fill=black!20,minimum size=4mm]
+
+  \tikzstyle{every label}=[red]
+
+  \begin{scope}
+    
+    
+    %Clients
+    \node [place] (w1)                                    {DO};
+    \node [place, draw=white] (c1) [below of=w1]                      {Trip A};
+    \node [place, ultra thick] (s)  [below of=c1] {MC};
+    \node [place, draw=white] (c2) [below of=s]                       {Trip B};
+    \node [place] (w2) [right of=c2]                      {DO}
+        edge [pre,bend right]                (s);
+
+    %boxes
+    \node [transition] (e1) [left of=c1] {Client}
+      edge [pre,bend left]                  (w1)
+      edge [post,bend right]                (s);
+
+    \node [transition] (e2) [left of=c2] {Client}
+      edge [post,bend left]                 (s);
+
+    \node [transition] (l1) [right of=c1] {Client}
+      edge [pre,bend left]                  (s)
+      edge [post,bend right] node[swap] {} (w1);
+
+    \node [transition] (l2) [below of=c2] {Client}
+      edge [pre,bend right]                 (w2)
+      edge [post,bend left]  node {}       (e2);
+  \end{scope}
+
+\end{tikzpicture}}%picture #1
+    \qquad
+    %picture #2
+    \subfloat[The split between useful and non-useful time, between activities inside a blcok.]{\begin{ganttchart}[
+		x unit=0.5cm,
+		y unit chart=0.5cm,
+		canvas/.style={draw=none,fill=none}, % remove canvas borders, etc
+		vgrid={*1{draw=black!12}},           % vertical gray lines every unit
+		inline,                              % draw bars inline
+		group/.style={draw=none,fill=none},  % remove group borders, etc
+		bar top shift=0,                   % give bar 10% padding top/bottom
+		bar height=1,                      % bar size 80% of vertical space
+		y unit title=0.5cm,                  % crop titles a little smaller
+		title/.style={draw=none,fill=none},  % remove title borders, etc
+		include title in canvas=false        % no vertical grid in title
+	]{-1}{12} % limits of time axis
+
+	\gantttitle{0}{2}
+	\gantttitle{2}{2}
+	\gantttitle{4}{2}
+	\gantttitle{6}{2}
+	\gantttitle{8}{2}
+	\gantttitle{10}{2}
+	\gantttitle{12}{2} \\
+
+    %fake schedule line to center the main one
+    \ganttgroup[inline=false]{}{0}{1}
+	\ganttbar[bar/.style={fill=yellow, opacity=0}]{}{2}{5} \\
+
+	%real schedule line
+	\ganttgroup[inline=false]{}{0}{1}
+	\ganttbar[bar/.style={fill=light blue}]{1}{0}{2} %first {} containts number displayed on cell, other two the limits from which to which
+	\ganttbar[bar/.style={fill=yellow}]{2}{3}{4}
+	\ganttbar[bar/.style={fill=light blue}]{3}{5}{7} 
+	\ganttbar[bar/.style={fill=yellow}]{4}{8}{10}
+	\ganttbar[bar/.style={fill=light blue}]{5}{11}{11} \\
+	
+	%fake schedule line to center the main one
+    \ganttgroup[inline=false]{}{0}{1}
+	\ganttbar[bar/.style={fill=yellow, opacity=0}]{}{2}{5} \\
+
+    \node[fill=light blue,draw] at ([yshift=-40pt]current bounding box.south){Useful};
+    \node[fill=yellow,draw] at ([yshift=-12pt]current bounding box.south){Non-useful};
+
+
+
+\end{ganttchart}}%end of picture #2
+    \caption{Illustrations of an instance of an atomic interval.}%
+    \label{fig:Atomic block}%
+\end{figure}
+
+

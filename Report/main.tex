@@ -1,0 +1,134 @@
+\documentclass[a4paper, twoside]{report}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usepackage{schemabloc}
+\usetikzlibrary{arrows,shapes,snakes,automata,backgrounds,petri}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{multirow} %to center a table cell with the multi lines cells in its row
+\usepackage{pgfgantt} % gantt chart
+\usepackage{todonotes} %just add [disable] between \usepackage and {todonotes}...also look line below
+\setlength{\marginparwidth}{2cm} %This is also related to the todo package so also comment it out when you eventually disable the todonotes
+\interfootnotelinepenalty=10000 %% Completely prevent breaking of footnotes
+\usepackage{pgfplots} % for processor chart
+\usetikzlibrary{intersections} % for processor chart
+\pgfplotsset{compat=newest}% for processor chart
+\usepackage{tikzscale}% for processor chart
+\usepackage{amssymb}%for nested sets
+\usepackage{tikz}%for nested sets
+\usetikzlibrary{positioning}%for nested sets
+\tikzset{set/.style={draw,circle,inner sep=0pt,align=center}}%for nested sets
+\usepackage{pifont}% check-mark
+\newcommand{\cmark}{\ding{51}}% check-mark
+\newcommand{\xmark}{\ding{55}}% check-mark
+\usepackage{babel,blindtext}%to have 3 images together
+\usepackage{enumitem}% to have bold numbers in enumerate in chapter 1
+\usepackage{floatrow}% table side by side with image
+% Table float box with bottom caption, box width adjusted to content
+\newfloatcommand{capbtabbox}{table}[][\FBwidth]% table side by side with image
+\usepackage{rotating}% to rotate trips from MC figure
+\usepackage{xcolor}% to use HEX colors
+\usepackage[ruled,vlined]{algorithm2e}%for algorithms
+\usetikzlibrary{decorations.pathreplacing,positioning, arrows.meta}
+\usepackage{makecell, cellspace, caption}% to color rows of table
+\usepackage{color, colortbl}
+\usepackage{mathtools}%to have one line of equation out of line
+ 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% COLORS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Random Colors
+\definecolor{light blue}{HTML}{bdc9e1}
+\definecolor{otherbluegantt}{HTML}{67a9cf}
+\definecolor{myLightGray}{RGB}{191,191,191}
+\definecolor{myGray}{RGB}{160,160,160}
+\definecolor{myDarkGray}{RGB}{144,144,144}
+\definecolor{myDarkRed}{RGB}{167,114,115}
+\definecolor{myRed}{HTML}{e41a1c}
+\definecolor{myGreen}{HTML}{4daf4a}
+\definecolor{myBlue}{HTML}{377eb8}
+\definecolor{Gainsboro}{HTML}{DCDCDC}
+\definecolor{light gray}{HTML}{BDBDBD}
+
+\definecolor{skiastro}{HTML}{abd9e9}
+\definecolor{newpoints}{HTML}{fdae61}
+\definecolor{points}{HTML}{2c7bb6}
+
+\definecolor{blue1}{HTML}{f0f9e8}
+\definecolor{blue2}{HTML}{bae4bc}
+\definecolor{blue3}{HTML}{7bccc4}
+\definecolor{blue4}{HTML}{2b8cbe}
+
+%sequential right (1)
+\definecolor{seqr1}{HTML}{B7E6A5}
+\definecolor{seqr2}{HTML}{7CCBA2}
+\definecolor{seqr3}{HTML}{46AEA0}
+\definecolor{seqr4}{HTML}{089099}
+
+%Diverging (1)
+\definecolor{div1}{HTML}{009392}
+\definecolor{div2}{HTML}{39B185}
+\definecolor{div3}{HTML}{9CCB86}
+\definecolor{div4}{HTML}{E9E29C}
+
+%Diverging (2)
+\definecolor{div21}{HTML}{089099}
+\definecolor{div22}{HTML}{7CCBA2}
+\definecolor{div23}{HTML}{FCDE9C}
+\definecolor{div24}{HTML}{F0746E}
+
+
+%\title{Mixed-Integer Optimisation for Scheduling Driving Time at Royal Mail} %or Mixed-Integer Optimisation for the Provision of efficient
+%\title{Mixed-Integer Optimisation for the Provision of Efficient Scheduling of HGV Driving Time} %or Mixed-Integer Optimisation for the Provision of efficientScheduling at Royal Mail
+\title{Data Analysis with Mixed-Integer Optimisation for Scheduling Royal Mail Deliveries} 
+\author{Athanasios Liaskas}
+% Update supervisor and other title stuff in title/title.tex
+
+\begin{document}
+\input{title/title.tex}
+
+\begin{abstract}
+Industrial Operations Research is one of the original and most vital fields highlighting the effectiveness of the theory of optimisation when applied to real-world applications. This work investigates the efficacy of Mixed-Integer Optimisation techniques in scheduling the routes performed by Royal Mail's fleet of postal service vehicles. Our findings although theoretical are designed to be easily transferable to the current infrastructure in operation, to help the corporation fulfil its same-day mail delivery mandate. 
+
+\vspace{\baselineskip}
+\noindent
+We show that the current scheduling practices are open to improvement on various aspects through solving Mathematical Programs that generate significantly more optimal schedules with respect to three objectives. We subsequently, select one of those optimal schedules and subject it to an uncertainty study. A Mail Transportation system such as the one run by Royal Mail is vulnerable from numerous aspects to uncertainty-related events. The purpose of the study is to determine the schedule's level of robustness against perturbations that resemble real-life disturbance occurrences. We close our project by studying two additional scheduling methodologies within the framework of Robust Optimisation to determine the methodology that best balances the provision of an efficient schedule that also remains robust under the influence of uncertainty.
+\end{abstract}
+
+\renewcommand{\abstractname}{Acknowledgements}
+\begin{abstract}
+\textit{This dissertation was undertaken in consultation with Royal Mail's Data Science Group.}
+\end{abstract}
+
+
+\tableofcontents
+%\listoffigures
+%\listoftables
+\listoftodos
+
+\input{introduction/introduction.tex}
+\input{background/background.tex}
+\input{[1] - chapter/Problem Definition}
+\input{[2] - chapter/Mathematical Formulations}
+\input{[3] - chapter/Benchmark Instances}
+%\input{project plan/project.tex}
+\input{evaluation/evaluation.tex}
+%\input{conclusion/conclusion.tex}
+\input{[end] - Future Work/Future Work}
+\input{appendix/appendix.tex}
+
+\bibliographystyle{vancouver}
+\bibliography{bibs/sample}
+
+\end{document}

@@ -3,7 +3,7 @@
 This repository contains the software created to produce the results seen in the MEng Final Year Project with title: **"Data Analysis with Mixed-Integer Optimisation for Scheduling Royal Mail Deliveries"**. The report was the main delivarable for this capstone project for my Electronic and Information Engineering degree from Imperial College London. The presentation was the second big deliverable that acted as a supporting document to the report.
 
 ## Presentation
-A video recording of the [presentation](Presentation/slide_pdf.pdf) can be found [here](https://drive.google.com/file/d/1nsZAzNGbp6vyK989YXSHSLXST2vk3n8o/view?usp=sharing).
+A video recording of the [presentation](Presentation/slides_pdf.pdf) can be found [here](https://drive.google.com/file/d/1nsZAzNGbp6vyK989YXSHSLXST2vk3n8o/view?usp=sharing).
 
 ## Abstract
 Industrial Operations Research is one of the original and most critical fields highlighting the effectiveness of the theory of optimisation when applied to real-world applications. This work investigates the efficacy of Mixed-Integer Optimisation techniques in scheduling the routes performed by Royal Mail's fleet of postal service vehicles. Our findings although theoretical are designed to be easily transferable to Royal Mail current operational infrastructure , to help the corporation fulfil its same-day mail delivery mandate. 

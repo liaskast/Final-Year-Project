@@ -90,9 +90,8 @@ In principle, formulating the program as a maximisation problem is equivalent to
 A program of any scientific interest is \textit{well-defined,} and its feasible set is concretely \textbf{bounded} and \textbf{non-empty}. For LPs the feasible set circumscribed by the set of linear constraints, translates to a \textbf{convex polyhedron} containing an infinite number of solutions. According to the \textit{Fundamental Theorem of LP}, at least one of the vertices of the polyhedron feasible set, contains the optimum solution to the LP\textbf{.}\par
 \vspace{\baselineskip}
 \noindent
-Consequently, an initial idea of an algorithm that obtains the optimal solution from inside the feasible set is the procedure of examining which of the finite number of vertices of the polyhedron \textit{S} produces the best objective value. However, computing the optimum through a \textit{finite search} over all the vertices is usually computationally prohibitive especially since the number of vertices increases exponentially [notesref] with the number of constrains and variables.\par
+Consequently, an initial idea of an algorithm that obtains the optimal solution from inside the feasible set is the procedure of examining which of the finite number of vertices of the polyhedron \textit{S} produces the best objective value. However, computing the optimum through a \textit{finite search} over all the vertices is usually computationally prohibitive especially since the number of vertices increases exponentially with the number of constrains and variables.\par
 
-\todo{notesref}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   SUB SECTION  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -137,7 +136,7 @@ Many real-life problems can be formulated as integer linear programs. The study 
 
  \vspace{\baselineskip}
 \noindent
-In reality, even though it seems slightly counter-intuitive at first, integer programs are considerably harder to solve. A naive assumption would be to claim that in an ILP, one only has a finite number of possible decisions (as seen in Figure \ref{fig:Integer Programming figure}(a)) so in principle one could essentially try them all. However, if the problem's scale is increased we will transition to a combinatorial problem where the number of solutions that one has to search over with this brute force approach becomes very large very quickly. We mentioned before that in the environment of LPs when we add new constraints the number of solutions increases exponentially. In an ILP specifically, the addition of \textit{n} binary variables increases the solution space by 2\textsuperscript{n}. As a consequence, a \textit{polynomial }time algorithm for ILPs has not yet been proven to exist \cite{DUMMY:2}, and such MILPs are considered \textit{NP-hard} \cite{Wedelin1995}.
+In reality, even though it seems slightly counter-intuitive at first, integer programs are considerably harder to solve. A naive assumption would be to claim that in an ILP, one only has a finite number of possible decisions (as seen in Figure \ref{fig:Integer Programming figure}(a)) so in principle one could essentially try them all. However, if the problem's scale is increased we will transition to a combinatorial problem where the number of solutions that one has to search over with this brute force approach becomes very large very quickly. We mentioned before that in the environment of LPs when we add new constraints the number of solutions increases exponentially. In an ILP specifically, the addition of \textit{n} binary variables increases the solution space by 2\textsuperscript{n} \cite{susteainabletranspaort}. As a consequence, a \textit{polynomial }time algorithm for ILPs has not yet been proven to exist \cite{DUMMY:2}, and such MILPs are considered \textit{NP-hard} \cite{Wedelin1995}.
 
 \vspace{\baselineskip}
 \noindent
@@ -650,7 +649,7 @@ One of the fundamental elements of Robust Optimisation are uncertainty sets. An 
 
 \vspace{\baselineskip}
 \noindent
-Hence, one can now generate instances $I$ of a problem that have this uncertainty set $U$ applied to it, from the following \textbf{spectrum of Instances}: $I_{lower}$ (every $s$ is $\underline{s}$), $I_{middle}$ (every $s$ is $\frac{\underline{s}+\overline{s}}{2}$), and $I_{upper}$ (every $s$ is $\overline{s}$). If we assume that $s$ is enclosed in a ball of radius $\Omega$ centered at the origin \cite{robustoptimisation}, we can have the following \cite{christodoulos},\cite{GORISSEN2015124}:
+Hence, one can now generate instances $I$ of a problem that have this uncertainty set $U$ applied to it, from the following \textbf{spectrum of Instances}: $I_{lower}$ (every $s$ is $\underline{s}$), $I_{middle}$ (every $s$ is $\frac{\underline{s}+\overline{s}}{2}$), and $I_{upper}$ (every $s$ is $\overline{s}$). If we assume that $s$ is enclosed in a ball of radius $\Omega$ centered at the origin \cite{robustoptimisation}, we can have the following \cite{christodoulos},\cite{GORISSEN}:
 
 \vspace{\baselineskip}
 \begin{equation}
@@ -667,12 +666,21 @@ However, in order to use the concept of \textit{uncertainty sets} to simulate th
 \noindent
 Generally speaking the generation of uncertainty set is not a trivial matter. D. Bertsimas and D. Brown develop a theory in \cite{concstructuncertaity} revolved around the generation of uncertainty sets that replicate explicit uncertainty sets as far as their structure and behavior. 
 
+\section{Lexicographic Optimisation}
+\label{section: Lexicographic}
+The study of the method of Lexicographic Optimisation is a gateway that allows us to transition to the playing field of multi-objective optimisation. In utilising the concepts of lexicographic optimisation one hopes to minimise those multiple objectives while sequencing the objective functions according to a lexicographical ordering \cite{surajg}. As mentioned in \cite{DBLP:journals/corr/abs-1805-03437} using a lexicographic ordering in combination with the Longest Processing Time heuristic seen in \ref{section:Makespan Scheduling}, we expect to solve the Makespan Schedule problem with superior results both in terms of efficiency but also with respect to quicker solution times. 
+
+\vspace{\baselineskip}
+\noindent
+In general the purpose of using a lexicographically generated schedule is to receive a schedule designed ideally for the process of rescheduling once we determine that some disturbance has occurred \cite{liebchen}. However, \cite{DBLP:journals/corr/abs-1805-03437} references us towards works such as \cite{easybylexico},\cite{GUPTE2016150} that showcase the effectiveness of lexicographic optimisation not only in obtaining efficient schedules but also in doing so in a relatively quick fashion provided our mixed-integer problem satisfies certain requirements. Being aware of this reasoning behind the use of lexicographic optimisation, we expect to obtain favourable results compared to less state-of-the-art methodologies. Indeed, as we will see in \ref{chapter:Benchmark Instances} that is the case, as this methodologies tends to outperform other methodologies studied with respect to various aspects.
+ 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    SECTION  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Vehicle Routing Problems}
 \label{section: vrp}
-Our problem can be interpreted as a \textit{Vehicle Routing Problem (VRP)}. We do not explicitly focus on the study of the routing of the problem, but instead focus on the scheduling aspect and only utilise some concepts derived from the \textit{VRP} discipline in our project. Nevertheless, we propose the application of the routing aspect of the \textit{VRP} philosophy on our problem as one of the future directions that need to be explored in the context of our problem. Hence, we include below a brief study, that aims to give the reader a high-level overview of this class of problems.
+Our problem can be interpreted as a \textit{Vehicle Routing Problem (VRP)} with collection and distribution\footnote{Namely, a problem that is capable of incorporating a delivery and a pick of an item to and from a location in the same trip.} \cite{Irnich}. We do not explicitly focus on the study of the routing of the problem, but instead focus on the scheduling aspect and only utilise some concepts derived from the \textit{VRP} discipline in our project. Nevertheless, we propose the application of the routing aspect of the \textit{VRP} philosophy on our problem as one of the future directions that need to be explored in the context of our problem. Hence, we include below a brief study, that aims to give the reader a high-level overview of this class of problems.
 
 \vspace{\baselineskip}
 \noindent
@@ -737,11 +745,6 @@ The first constraint reflects the definition of the \textit{makespan}, and makes
 \vspace{\baselineskip}
 \noindent
 As we can see, Figure \ref{fig:intro gantt chart} contains an example of two schedules\cite{DUMMY:2}. The example is meant to illustrate the effect of applying a Makespan Scheduling formulation on the non-optimised schedule seen in \ref{fig:intro gantt chart}(a). In this case the set of input data is the following:
-
-\begin{itemize}
-    \item \\
-    \item We have nine jobs each with their own processing time $p_j$.\\
-\end{itemize}
 
 \vspace{\baselineskip}
 {\addtolength{\leftskip}{5mm}
@@ -883,8 +886,9 @@ Comparing this time-indexed formulation with that in (2.5), it is visible that (
 Returning to the context of the scheduling problem, we can characterise a schedule Pareto optimal provided we cannot minimise one of its objectives without
 incurring an expense for another objective, as expected from the definition of a Pareto optimal solution in Section \ref{section: Pareto}.
 
-\todo{write more from scheduling book on pareto}
-
+\vspace{\baselineskip}
+\noindent
+As with any other Pareto relevant problem, we will be hence able to plot all Pareto Optimal schedules on the $f_1,f_2,\ldots,f_n$ plane. In the majority of problems such as those studied in Chapter \ref{chapter: 2-Evaluating Royal Mail Historical Data} only Pareto Optimal schedules are of interest. On the contrary a schedule that cannot be placed on a Pareto frontier is of little interest to us. The process is usually to create the Pareto frontier such that the scheduler can observe all the Pareto points and subsequently select the most preferable schedule for their requirements
 
 \section{System Specifications}
 All computations are processed with a 6-core Intel Core i7 CPU running at 2.60GHz with a 16GB RAM memory on a macOS Catalina (version 10.15.4) machine. The models were implemented using C++11 that was compiled with the GNU Compiler Collection (GCC). The solutions were obtained through using the commercial solver CPLEX 12.9. Unless it is specifically stated, all solutions obtained are the optimal ones for the given objective function, set of constraints and decision variables.   

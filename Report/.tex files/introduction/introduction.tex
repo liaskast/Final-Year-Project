@@ -57,7 +57,60 @@ A summary of the contributions of the project is found below:
 	\item Chapter \ref{chapter: Future Directions}: concludes with a synopsis of the key achievements of this dissertation and a series of ideas for future exploration, and improvements to the modelling that would extend the aspects of the problem captured.
 \end{itemize}\par
 
+\vspace{\baselineskip}
+\paragraph{Project Management}
+The Gantt chart featured in Figure \ref{fig:project organisation gantt chart} provides an outline of the various steps that we implemented in order to complete the experiments in this dissertation. As one can observed from the chart, Milestone (2) lasted a while longer than originally planned for. This was mostly due to the fact that the analysis of the dataset was a much bigger task than initially anticipated. This had a substantial effect on our ability to complete Milestone (3) since the study of uncertainty was added in fairly late stages of the project and the pursuit of our full intentions for that chapter was not realised. Namely, we did not end up studying the effects of ellipsoidal uncertainty sets as we originally planned to.
 
 
+\begin{figure}[h]
+    \centering
+    \begin{ganttchart}[%Specs
+     y unit title=0.5cm,
+     y unit chart=0.7cm,
+     vgrid,hgrid,
+     title height=1,
+%     title/.style={fill=none},
+     title label font=\bfseries\footnotesize,
+     bar/.style={fill=blue},
+     bar height=0.7,
+%   progress label text={},
+     group right shift=0,
+     group top shift=0.7,
+     group height=.3,
+     group peaks width={0.2},
+     inline]{1}{24}
+    %labels
+    \gantttitle{Dissertation Timeline}{24}\\  % title 1
+    \gantttitle[]{2019}{12}                 % title 2
+    \gantttitle[]{2020}{12} \\              
 
 
+    \gantttitle{Oct-Dec}{8}
+    \gantttitle{Jan-Mar}{8}
+    \gantttitle{Apr-June}{8}
+
+    % Setting group if any
+    \ganttgroup[inline=false]{Milestone 1}{1}{7}\\ 
+    \ganttbar[progress=100,inline=false]{Formluate MILPs}{1}{7}\\
+
+
+    \ganttgroup[inline=false]{Milestone 2}{8}{14} \\ 
+    \ganttbar[progress=100,inline=false]{Receive Dataset}{10}{12} \\
+    \ganttbar[progress=100,inline=false]{Data Cleaning}{11}{13} \\
+    \ganttbar[progress=100,inline=false]{Optimisation}{13}{19} \\
+
+    \ganttgroup[inline=false]{Milestone 3}{15}{18} \\
+    \ganttbar[progress=100,inline=false]{Interim Presentation}{15}{18} \\ 
+    
+        \ganttgroup[inline=false]{Milestone 3}{19}{24} \\
+    \ganttbar[progress=85,inline=false]{Study of Uncertainty}{19}{24} \\ 
+    \ganttbar[progress=100,inline=false]{Report Preparation}{15}{24} \\ 
+    
+
+\end{ganttchart}
+    \caption{Gantt chart illustrating the various milestones that were performed to complete this dissertation.}
+    \label{fig:project organisation gantt chart}
+\end{figure}
+
+
+     

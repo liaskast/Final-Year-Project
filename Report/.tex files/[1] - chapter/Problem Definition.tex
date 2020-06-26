@@ -255,7 +255,7 @@ Nonetheless certain interesting facts can be determined from this example. To st
 
 \vspace{\baselineskip}
 \noindent
-The typical blocks that occur most often are blocks such as block 1-3. They contain the typical sequence of activities: the \texttt{start} to the duty, the \texttt{loading} of the mail, the \texttt{travel leg} to the external location after the \texttt{unloading} of the mail a return back to the MC to \texttt{end} the duty. In contrast  blocks 4-6 are slightly unique in their sequence of events. Block number 4 for instance is a \textit{container repatriation trip}. The HGV leaves the MC to pick up containers that were previously left at an external location, in order to bring the back to the MC for their use the following day.
+The typical blocks that occur most often are blocks such as block 1-3. They contain the typical sequence of activities: the \texttt{start} to the duty, the \texttt{loading} of the mail, the \texttt{travel leg} to the external location after the \texttt{unloading} of the mail a return back to the MC to \texttt{end} the duty. In contrast  blocks 4-6 are slightly unique in their sequence of events. Block number 4 for instance is a \textit{container repatriation} trip. The HGV leaves the MC to pick up containers that were previously left at an external location, in order to bring the back to the MC for their use the following day.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% sub-Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -365,7 +365,7 @@ Royal Mail have provided historical data from the Exeter MC, that shows the itin
     
     \item \underline{\textbf{Atomic Interval (block)}}: In the dataset, a \textbf{block} is constituted by a set of \textbf{activities} from table \ref{table:Activity List}. We identify a block by its first, and last activity, and more specifically merely by the \texttt{start}, and \texttt{end} time of the \texttt{start/end} activity since the locations at the start and end will be the MC itself, by the definition of a block.
     
-    \todo{Figure required showing this thing with first and last start/end activity.}
+        %\todo{Figure required showing this thing with first and last start/end activity.}
     
         \item \underline{\textbf{Duty}}: The largest unit of time seen in the dataset that consists of a collection of \textbf{blocks}. Duties in the dataset correspond to a \textit{driver} taking the \textit{HGV} assigned to them, and completing the collection of \textbf{blocks} (i.e. round-trips) required.
 \end{itemize}

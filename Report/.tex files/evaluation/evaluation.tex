@@ -30,6 +30,13 @@ During the preparation of the presentation, it was noticed that the classificati
 \noindent
 Although this observation was uncovered in too late a stage, further research showed that the effect on our results is minimal. 
 
+\subsection*{Optimality Gap in Redefined Optimised Schedules}
+In Section \ref{section:Makespan Scheduling-content} of Chapter \ref{chapter: 2-Evaluating Royal Mail Historical Data}, we conclude our analysis of the Makespan Scheduling formulation by applying formulation (\ref{equation: Makespan Scheduling}) on the Redefined instances. In observing the results from that experiment we observed that the generated schedules had not achieved their full potential with respect to the minimisation of their makespan. More specifically we observed that the makespan achieved was greater than the longest lasting block observed in the instance that it was based on.
+
+\vspace{\baselineskip}
+\noindent
+The reasoning behind this under-performance was founded in the fact that during the generation of the schedule the timer upper of $10^3 \; seconds$ was triggered. Hence, naturally we did not obtain the optimal solution for the case and as a result an optimality gap existed between the true optimal schedule and our result. We decided not to amend that optimality gap by changing the timer trigger because that would render the comparison of all our results inconsistent. However, we could claim that for the purposes of assisting Royal Mail's efforts it might have been advisable to close that optimality gap and obtain the true optimum solution.
+
 \subsection*{Impracticable Pre-emptive Schedules}
 In Section \ref{section: Pre-emptive} of Chapter \ref{chapter: 2-Evaluating Royal Mail Historical Data} we transform our previously utilised formulation of Makespan Scheduling into an equivalent pre-emptive formulation. The purpose of this transformation of our model is to use the transformed model to obtain a an approximation of the \textbf{theoretical optimal schedule}. 
 

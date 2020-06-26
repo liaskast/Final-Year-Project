@@ -10,6 +10,7 @@ These terms are used interchangeably throughout the dissertation, to not tire th
     \item HGV = Heavy Goods Vehicles = 7.5 tonne lorries
     \item HGV Driver = Employee
     \item Model = Formulation 
+    \item Maximum Difference \cite{maxdif} = Measure of the difference in the distribution of load between the heaviest and least loaded duties.
 \end{itemize}
 
 \vspace{\baselineskip}
@@ -18,19 +19,18 @@ Unless stated otherwise, all \textbf{time} values are presented in (HH:mm) forma
  
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHAPTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Second Appendix}
+\chapter{Dataset Findings}
 \label{chapter: second appendix}
-Tables showing the characteristics of the Historical Schedule. Number of input components, average, minimum, maximum duty lengths in (HH:mm), and overall time scheduled.
 
-\todo{put this as a clarifying note}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Dataset Findings}
+\vspace{\baselineskip}
+\noindent
 In this section of the appendix, we mention some interesting facts that were observed during the study of the historical schedules that we not deemed important enough to display in the main part of the port. However, we believe that they are useful for reference purposes which is why we outline them below. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% sub-Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Attributes Featured in the Dataset}
+\section{Attributes Featured in the Dataset}
 \label{subsection: Eliminated Attributes}
 In the following section we outline a detailed list of the attributes observed in the dataset as well as a description of the information they provide. As mentioned in Section \ref{section: Data Cleaning} of Chapter \ref{chapter: Problem Definition} we preserve information from only a handful of them and the rest are taken into account for the purposes of this project.
 
@@ -81,7 +81,7 @@ In the following section we outline a detailed list of the attributes observed i
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% sub-Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Activities Featured in the Dataset}
+\section{Activities Featured in the Dataset}
 \label{section: Appendix Activities Feaure in the Dataset}
 The activities seen in Table \ref{table:Activity List} were those that were observed in the original form of the dataset as was provided to us by Royal Mail. Upon the implementation of the Data Cleaning procedures as seen in Section \ref{section: Data Cleaning} of Chapter \ref{chapter: Problem Definition}, the list of activities was transformed to its \textbf{Finalised Dataset} form as seen in Table \ref{table:Final Activity List} of Section \ref{section: Data Cleaning}.
 
@@ -126,7 +126,7 @@ The activities seen in Table \ref{table:Activity List} were those that were obse
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% sub-Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Starting Times of Duties}
+\section{Starting Times of Duties}
 \label{subsection: Appendix Starting times}
 As was mentioned in the Data Exploration section \ref{section: Data Exploration}, the duties of each driver tend to start in \textit{clusters}, internally referred to as \textbf{waves}. This is clearly observed in Figure \ref{fig:starting time} where we have plotted the \textit{starting times} of duties, with the duties sorted in an increasing order. 
 
@@ -174,7 +174,7 @@ Using Figure \ref{fig:starting time} as our guide, we manually characterised eac
 As we can see in Table \ref{table:Starting Waves} the waves have practically the same amount of duties, however they differ considerably in their timespan. The \texttt{morning} wave is around half the length of the \texttt{night} wave, and the \texttt{afternoon} is almost equal to the sum of the \texttt{morning, night} waves.    
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% sub-Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Number of Daily Duties}
+\section{Number of Daily Duties}
 We thought, it would be an interesting fact to see how many duties occurred each day of the week. This information was deduced from our dataset which contained one week's worth of duties. We plotted the number of duties that occurred each day on Figure \ref{fig: Number of shifts per day}. The findings from this plot would consequently, be indicative of the number of HGV drivers required to carry out those duties per week. Hence, we can infer what Royal Mail's overall fleet of drivers looks like on a given week, since each driver performs one duty per day. 
 
 \vspace{\baselineskip}
@@ -195,10 +195,10 @@ We can observe from the figure that Royal Mail, requires on average around 60 dr
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Operations on Historical Schedules}
+\chapter{Operations on Historical Schedules}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Sub-Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Redefining Historical Schedules}
+\section{Redefining Historical Schedules}
 \label{subsection: redefine appexnix}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Figure %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -248,7 +248,7 @@ The operation of deleting the activities has a direct impact on the structure of
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Sub-Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Comparison of Disturbed Nominal and Optimised Schedules}
+\section{Comparison of Disturbed Nominal and Optimised Schedules}
 \label{subsection: Appendix Comparison of Disturbed Nominal and Optimised Schedules}
 In Figure \ref{fig: Nominal Uncertainty Sets Effects.} our goal is to determine the robustness to uncertainty of the nominal schedule. To identify its level of robustness we compare, for of the three uncertainty sets, the disturbed instance optimised under uncertainty with the nominal schedule disturbed with the same instance. There are two such cases for each uncertainty set, one that involves instances that have been \texttt{reduced}, with respect to the overall time scheduled, after the application of uncertainty, and those that have been \texttt{augmented} respectively. The former are presented in Figure \ref{fig: Nominal Uncertainty Sets Effects.}(a) while the latter in Figure \ref{fig: Nominal Uncertainty Sets Effects.}(b). 
 
@@ -273,11 +273,15 @@ In Figure \ref{fig: Nominal Uncertainty Sets Effects.} our goal is to determine 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Supporting Notes}
+\chapter{Supporting Notes}
+
+Tables showing the characteristics of Schedules throughout the report provide measurements of length of time in (HH:mm) units, unless otherwise stated.
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Sub-Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{EU Directives for HGV Drivers}
+\section{EU Directives for HGV Drivers}
 \label{section: EU rules}
 This section makes reference to the  European Union (EU) rules on drivers' hours and working time as dictated by the Department for Transport (DfT). This is an important real-life aspect of our problem, that is mentioned and referred to, at various points in the report. %link: https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/856360/simplified-guidance-eu-drivers-hours-working-time-rules.pdf
 
@@ -331,7 +335,7 @@ This section makes reference to the  European Union (EU) rules on drivers' hours
 
         
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Sub-Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%        
-\subsection{Relaxation of a Mathematical Program}
+\section{Relaxation of a Mathematical Program}
 \label{section: Appednix Relaxation}
 In order to utilise the efficacy of the simplex algorithm, and apply to solve MILPs we require to obtain the relaxation of an integer-linear program into a LP. A relaxed version of an integer program is defined as below.
 

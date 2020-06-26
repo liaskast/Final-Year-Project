@@ -25,7 +25,7 @@ The set of assumptions mentioned are succinctly summarised below:
 	\renewcommand{\arraystretch}{1.7} %adds space between cells of a table
 		\centering
 		\begin{tabular}{|c |p{0.9\textwidth}|} 
-			\multicolumn{2}{c}{\textbf{Simplifying Assumptions}} \\
+			\multicolumn{2}{l}{\textbf{Simplifying Assumptions}} \\
 		    \hline
 			\textbf{(1)}  & The \textbf{duration} of a \textbf{block} stays \textbf{constant}, irrespective of the timing of its occurrence.\\
             \hline
@@ -182,7 +182,7 @@ The application of the Makespan Scheduling model on the Historical dataset has t
 \noindent
 The effect of our model is most noticeable in Figure \ref{fig:1-D1M1}(b) which plots the duration of each duty before and after the optimisation. We can observe how this first attempt at optimising the historical schedule results in a fairer distribution of labor time, since the majority of duties are now of similar length. There is also a big improvement in the \textbf{reduction of extremities} vis-\`a-vis extremely long and extremely short shifts, allowing us to prevent the occurrence of a large group of very long duties that are not efficient since they require drivers to complete overtimes. In a nutshell a reduction of the order of \textbf{72\%} in the \textbf{standard deviation ($\pmb{\sigma}$)} of the optimised schedule compared to the input instance encapsulates the fact that we have achieved our main goal of obtaining a more uniform schedule.
 
-\subsubsection*{Numerical Results}
+\subsubsection*{Quantitative Results}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Table %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -221,7 +221,7 @@ A synopsis of the statistics that highlight the performance of our model for the
 \small
     \centering 
 \begin{tabular}{c|c|c}
-        \textbf{Schedule} & \textbf{Makespan Reduction (\%)} & Mean Deviation-\textbf{Reduction (\%)} \\
+        \textbf{Schedule} & \textbf{Makespan Reduction (\%)} & \textbf{Maximum Difference-Reduction \cite{maxdif} (\%)} \\
         \hline
          Historical\_Optimised & 28\% & 72\% \\
 \end{tabular}
@@ -314,7 +314,7 @@ In terms of encapsulating the performance of generated schedule in a more concre
 \small
     \centering 
 \begin{tabular}{c|c|c}
-        \textbf{Schedule} & \textbf{Makespan Reduction (\%)} & Mean Deviation-\textbf{Reduction (\%)} \\
+        \textbf{Schedule} & \textbf{Makespan Reduction (\%)} & \textbf{Maximum Difference-Reduction (\%)} \\
         \hline
          Historical\_Optimised & 28\% & 72\% \\
         \hline
@@ -328,7 +328,7 @@ Comparing the optimised schedules that are created from the Historical and Redef
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% sub-SECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection*{Evaluation - Optimising Starting Time Cluster Instance}
+\subsection*{Evaluation - Optimising Departure Wave Instances}
 As a final experiment on the Makespan Scheduling model we break our problem into separate instances that are designed to resemble the observation made through analysing the dataset\footnote{The \texttt{starting-time} analysis of the dataset mentioned is presented in detail in Appendix \ref{subsection: Appendix Starting times} for interested readers.} concerning the fact that duties tend to start in \textbf{wave}-like clusters. This observation is an important, design parameter that needs to be taken into serious consideration, as it automatically renders any results that we are able to obtain more \textit{practically oriented} and easier to realise from the perspective of Royal Mail. As outlined in Section \ref{section: Wave Instances - Data} we split our dataset into three autonomous sub-problems and we once more run the Makespan Scheduling model.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Table %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -406,7 +406,7 @@ All in all, by approximating the real-world through adding such constraints to o
 \small
     \centering 
 \begin{tabular}{l|c|c}
-        \textbf{Schedule} & \textbf{Makespan Reduction (\%)} & Mean Deviation-\textbf{Reduction (\%)} \\
+        \textbf{Schedule} & \textbf{Makespan Reduction (\%)} & \textbf{Maximum Difference-Reduction (\%)} \\
         \hline
          Historical\_Optimised & 28\% & 72\% \\
         \hline
@@ -663,7 +663,7 @@ The results of the preemptive model hints to a lower-bound for the maximum duty 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% sub-SECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection*{Evaluation - Optimising Redefined Instances}
+\subsection*{Evaluation - Optimising Redefined Instance}
 We repeat the process outlined above to calculate the effect of pre-emption on the Redefined instance. We ran the MILP (\ref{equation: Makespan preemptive}) but with an instance containing 2,850 activities that were once again allocated among a set of 183 duties. The \texttt{absolute theoretical limit} in this case would be to obtain a schedule where \textit{L} would be equal to the average duty length of the instance (i.e. 06:06). 
 
 \vspace{\baselineskip}

@@ -3,7 +3,7 @@
 The repository contains the main deliverables and software designed to produce the results seen in the MEng Final Year Project with title: **"Data Analysis with Mixed-Integer Optimisation for Scheduling Royal Mail Deliveries"**. The [report](Report/final_report.pdf) is the main delivarable for this capstone project for my Electronic and Information Engineering degree from Imperial College London. The [presentation](Presentation/slides_pdf.pdf) is the second big deliverable that acts as a supporting document to the report.
 
 ## Report
-The final version of the Dissertaion Report can be found [here](Report/final_report.pdf).
+The final version of the Dissertation Report can be found [here](Report/final_report.pdf).
 
 ## Presentation
 A video recording of the [presentation](Presentation/slides_pdf.pdf) can be found [here](https://drive.google.com/file/d/1nsZAzNGbp6vyK989YXSHSLXST2vk3n8o/view?usp=sharing).

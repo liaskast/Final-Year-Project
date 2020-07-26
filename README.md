@@ -9,7 +9,7 @@ The final version of the Dissertation Report can be found [here](Report/final_re
 - ### Presentation
 A video recording of the [presentation](Presentation/slides_pdf.pdf) can be found [here](https://drive.google.com/file/d/1nsZAzNGbp6vyK989YXSHSLXST2vk3n8o/view?usp=sharing).
 
-## Abstract
+## Project Abstract
 Industrial Operations Research is one of the original and most critical fields highlighting the effectiveness of the theory of optimisation when applied to real-world applications. This work investigates the efficacy of Mixed-Integer Optimisation techniques in scheduling the routes performed by Royal Mail's fleet of postal service vehicles. Our findings although theoretical are designed to be easily transferable to Royal Mail current operational infrastructure , to help the corporation fulfil its same-day mail delivery mandate. 
 
 We show that the current scheduling practices are open to improvement on various aspects through solving Mathematical Programs that generate significantly more optimal schedules with respect to three objectives. We subsequently, select one of those optimal schedules and subject it to an uncertainty study. A Mail Transportation system such as the one run by Royal Mail is vulnerable from numerous aspects to uncertainty-related events. The purpose of the study is to determine the schedules' level of robustness against perturbations that resemble real-life disturbance occurrences. We conclude our project by studying two additional scheduling methodologies within the framework of Robust Optimisation to determine the methodology that best balances the provision of an efficient schedule that also remains robust under the influence of uncertainty.

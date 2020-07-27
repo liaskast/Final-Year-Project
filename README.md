@@ -15,11 +15,11 @@ Industrial Operations Research is one of the original and most critical fields h
 We show that the current scheduling practices are open to improvement on various aspects through solving Mathematical Programs that generate significantly more optimal schedules with respect to three objectives. We subsequently, select one of those optimal schedules and subject it to an uncertainty study. A Mail Transportation system such as the one run by Royal Mail is vulnerable from numerous aspects to uncertainty-related events. The purpose of the study is to determine the schedules' level of robustness against perturbations that resemble real-life disturbance occurrences. We conclude our project by studying two additional scheduling methodologies within the framework of Robust Optimisation to determine the methodology that best balances the provision of an efficient schedule that also remains robust under the influence of uncertainty.
 
 ## Acknowledgements
-The first half of the dissertation was undertaken under the supervision of Dr Ruth Misener, while the remaining part was completed with help from Dr Dimitrios Letsios.
+The first half of the dissertation was undertaken under the supervision of [Dr Ruth Misener](https://github.com/rmisener), while the remaining part was completed with help from [Dr Dimitrios Letsios](https://github.com/dimletsios).
 
- - I would like to thank Dr Ruth Misener for her advice as well as for enabling my cooperation with Royal Mail by organising this project. 
+ - I would like to thank [Dr Ruth Misener](https://github.com/rmisener) for her advice as well as for enabling my cooperation with Royal Mail by organising this project. 
 
- - I would also like to express my thanks to my supervisor Dr Dimitrios Letsios for his continuous support and guidance throughout my MEng Thesis.
+ - I would also like to express my thanks to my supervisor [Dr Dimitrios Letsios](https://github.com/dimletsios) for his continuous support and guidance throughout my MEng Thesis.
 
 *The dissertation was undertaken in consultation with Royal Mail's Data Science Group.*
 

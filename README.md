@@ -1,6 +1,6 @@
 # Final Year Project (FYP)
 
-This repository contains the main deliverables and software designed to produce the results seen in the MEng Final Year Project with title: **"Data Analysis with Mixed-Integer Optimisation for Scheduling Royal Mail Deliveries"**. The [report](Report/final_report.pdf) is the main delivarable for this capstone project for my Electronic and Information Engineering degree from Imperial College London. The [presentation](Presentation/slides_pdf.pdf) is the second big deliverable that acts as a supporting document to the report.
+This repository contains the main deliverables and software designed to produce the results seen in my MEng Final Year Project thesis for titled: **"Data Analysis with Mixed-Integer Optimisation for Scheduling Royal Mail Deliveries"**. The [report](Report/final_report.pdf) is the main delivarable for this capstone project for my Electronic and Information Engineering degree from Imperial College London. The [presentation](Presentation/slides_pdf.pdf) is the second big deliverable that acts as a supporting document to the report.
 
 ## Deliverables 
 - ### Report
